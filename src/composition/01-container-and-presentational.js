@@ -1,17 +1,10 @@
-import * as React from "react";
-import PropTypes from "prop-types";
+import React from "react";
 
-export class WithNow extends React.Component {
-  static propTypes = {
-    children: PropTypes.func.isRequired
-  };
+function Today({ now }) {
+  return now.toLocaleString();
+}
 
-  render() {
-    return this.props.children(this.state.now);
-  }
-
-  // common logic
-
+export class MyComponent extends React.Component {
   state = {
     now: new Date()
   };
@@ -26,7 +19,16 @@ export class WithNow extends React.Component {
     clearInterval(this.interval);
   }
 
+  render() {
+    return <Today now={this.state.now} />;
+  }
+
   updateTime = () => {
     this.setState({ now: new Date() });
   };
+
+  // @public
+  ping() {
+    return true;
+  }
 }

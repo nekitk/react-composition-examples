@@ -16,9 +16,6 @@ export default class MyComponent extends React.Component {
       <div>
         {this.state.greeting} Now: {this.state.now.toLocaleString()}
         * Не работает с функциональными компонентами
-        <br />
-        * Обратный вариант невозможен, т.к. нет множественного наследования
-        (`class MyComponent extends WithNow, WithWidth`)
       </div>
     );
   }

@@ -1,28 +1,32 @@
-export const withNow = (accuracyInMs = 1000) => Component => {
-  return class WithNow extends Component {
-    constructor(props) {
-      super(props);
+import * as React from "react";
+import PropTypes from "prop-types";
 
-      this.state = {
-        ...this.state,
-        now: new Date()
-      };
-    }
-
-    interval;
-
-    componentDidMount() {
-      super.componentDidMount();
-      this.interval = setInterval(this.updateTime, accuracyInMs);
-    }
-
-    componentWillUnmount() {
-      super.componentWillUnmount();
-      clearInterval(this.interval);
-    }
-
-    updateTime = () => {
-      this.setState({ now: new Date() });
-    };
+export class WithNow extends React.Component {
+  static propTypes = {
+    children: PropTypes.func.isRequired
   };
-};
+
+  render() {
+    return this.props.children(this.state.now);
+  }
+
+  // common logic
+
+  state = {
+    now: new Date()
+  };
+
+  interval;
+
+  componentDidMount() {
+    this.interval = setInterval(this.updateTime, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  updateTime = () => {
+    this.setState({ now: new Date() });
+  };
+}

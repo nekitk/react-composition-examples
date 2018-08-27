@@ -1,6 +1,6 @@
 import * as React from "react";
 import { WithNow } from "./with-now";
-import { WithNowFACC } from "./facc";
+import { WithNow as WithNowFACC } from "./facc";
 import { Summary } from "./summary";
 
 export default class MyComponent extends React.Component {
@@ -14,7 +14,7 @@ export default class MyComponent extends React.Component {
         />
 
         <WithNowFACC>
-          {now => <div>Now: {now.toLocaleString()}</div>}
+          {now => <div>FACC: {now.toLocaleString()}</div>}
         </WithNowFACC>
 
         <Summary />

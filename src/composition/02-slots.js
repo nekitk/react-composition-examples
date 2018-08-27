@@ -20,9 +20,4 @@ export class MyComponent extends React.Component {
       />
     );
   }
-
-  // @public
-  ping() {
-    alert("Pinged!");
-  }
 }

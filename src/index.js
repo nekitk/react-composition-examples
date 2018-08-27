@@ -1,10 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
 
-// import { MyComponent } from "./composition/my-component";
+import { MyComponent } from "./composition/01-container-and-presentational.js";
 // import { MyComponent } from "./composition/children-branching";
 // import MyComponent from "./hoc/my-component";
-import MyComponent from "./render-prop/my-component";
+// import MyComponent from "./render-prop/my-component";
 // import MyComponent from "./component-prop/my-component";
 // import MyComponent from "./decorator-hoc/my-component";
 // import MyComponent from "./inheritance-hoc/my-component";
@@ -21,7 +21,7 @@ class App extends React.Component {
         <button type="button" onClick={this.handleClick}>
           Ping MyComponent
         </button>
-
+        <br />
         <MyComponent ref={this.myRef} />
       </div>
     );

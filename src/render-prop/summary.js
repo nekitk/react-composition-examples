@@ -8,6 +8,7 @@ export function Summary() {
         <ul>
           <li>Явно видно, что откуда берётся</li>
           <li>Динамическая композиция внутри render</li>
+          <li>Легко типизировать</li>
         </ul>
       </section>
       <section>
@@ -23,8 +24,22 @@ export function Summary() {
       <section>
         Пример:
         <ul>
-          <li>Новый Context API</li>
-          <li>react-router</li>
+          <li>
+            Новый Context API
+            <br />
+            <pre>
+              {`<Consumer>
+  {value => /* render something based on the context value */}
+</Consumer>`}
+            </pre>
+          </li>
+          <li>
+            react-router
+            <br />
+            https://reacttraining.com/react-router/core/api/Route/render-func
+            <br />
+            https://reacttraining.com/react-router/core/api/Route/children-func
+          </li>
           <li>
             react-apollo
             <br />
@@ -46,16 +61,7 @@ export function Summary() {
       <section>
         Ссылки:
         <ul>
-          <li>
-            https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html
-          </li>
-          <li>
-            https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750
-          </li>
-          <li>
-            createReactClass in React 16:
-            https://reactjs.org/docs/react-without-es6.html
-          </li>
+          <li>https://www.youtube.com/watch?v=BcVAq3YFiuc</li>
         </ul>
       </section>
     </React.Fragment>
