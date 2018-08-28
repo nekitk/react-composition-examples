@@ -1,13 +1,18 @@
 import React from "react";
 import { render } from "react-dom";
 
-import { MyComponent } from "./composition/01-container-and-presentational.js";
+// import { MyComponent } from "./composition/01-container-and-presentational.js";
 // import { MyComponent } from "./composition/children-branching";
 // import MyComponent from "./hoc/my-component";
 // import MyComponent from "./render-prop/my-component";
+// import MyComponent from "./render-prop/recomposed";
+// import MyComponent from "./render-prop/omni-render-prop";
 // import MyComponent from "./component-prop/my-component";
+// import MyComponent from "./component-prop/cacc";
+import MyComponent from "./component-prop/recomposed";
 // import MyComponent from "./decorator-hoc/my-component";
-// import MyComponent from "./inheritance-hoc/my-component";
+// import MyComponent from "./inheritance/basic-inheritance";
+// import MyComponent from "./inheritance/multiple-inheritance";
 // import MyComponent from "./mixin/my-component";
 
 // TODO табы с разными компонентами ?

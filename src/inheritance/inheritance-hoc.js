@@ -1,4 +1,4 @@
-export const withNow = (accuracyInMs = 1000) => Component => {
+export const withNow = () => Component => {
   return class WithNow extends Component {
     constructor(props) {
       super(props);
@@ -13,7 +13,7 @@ export const withNow = (accuracyInMs = 1000) => Component => {
 
     componentDidMount() {
       super.componentDidMount();
-      this.interval = setInterval(this.updateTime, accuracyInMs);
+      this.interval = setInterval(this.updateTime, 1000);
     }
 
     componentWillUnmount() {

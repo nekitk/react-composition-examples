@@ -1,5 +1,5 @@
 {
-  "name": "react-components",
+  "name": "react-component-composition",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -11,7 +11,8 @@
     "create-react-class": "15.6.3",
     "ramda": "0.25.0",
     "react": "16.4.1",
-    "react-dom": "16.4.1"
+    "react-dom": "16.4.1",
+    "recompose": "0.29.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.6.1"

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export function withNow(Component) {
+export const withNow = (accuracy = 1000) => Component => {
   class WithNow extends React.Component {
     static displayName = `WithNow(${Component.displayName ||
       Component.name ||
@@ -21,7 +21,7 @@ export function withNow(Component) {
     interval;
 
     componentDidMount() {
-      this.interval = setInterval(this.updateTime, 1000);
+      this.interval = setInterval(this.updateTime, accuracy);
     }
 
     componentWillUnmount() {
@@ -36,4 +36,4 @@ export function withNow(Component) {
   return React.forwardRef((props, ref) => {
     return <WithNow {...props} forwardedRef={ref} />;
   });
-}
+};

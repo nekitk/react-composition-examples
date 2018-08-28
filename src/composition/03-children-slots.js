@@ -35,9 +35,4 @@ export class MyComponent extends React.Component {
       </Layout>
     );
   }
-
-  // @public
-  ping() {
-    alert("Pinged!");
-  }
 }
