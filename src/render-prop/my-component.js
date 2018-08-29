@@ -7,6 +7,9 @@ export default class MyComponent extends React.Component {
   render() {
     return (
       <div>
+        <h1>Render prop</h1>
+        <h2>aka Renderless component</h2>
+
         <WithNow
           render={now => {
             return <div>Now: {now.toLocaleString()}</div>;

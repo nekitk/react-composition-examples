@@ -4,6 +4,47 @@ export function Summary() {
   return (
     <React.Fragment>
       <section>
+        Пример:
+        <ul>
+          <li>
+            Новый Context API
+            <br />
+            <pre>
+              {`
+<Consumer>
+  {value => /* render something based on the context value */}
+</Consumer>
+              `}
+            </pre>
+          </li>
+          <li>
+            react-router
+            <br />
+            https://reacttraining.com/react-router/core/api/Route/render-func
+            <br />
+            https://reacttraining.com/react-router/core/api/Route/children-func
+          </li>
+          <li>
+            react-apollo
+            <br />
+            <pre>
+              {`
+<Query query={GET_DATA}>
+  {({ loading, error, data }) => {
+    if (loading) return 'Loading...';
+    if (error) return 'Error!';
+
+    return (
+      <div>{JSON.stringify(data)}</div>
+    );
+  }}
+</Query>
+            `}
+            </pre>
+          </li>
+        </ul>
+      </section>
+      <section>
         Плюсы:
         <ul>
           <li>Явно видно, что откуда берётся</li>
@@ -19,41 +60,23 @@ export function Summary() {
             Нужно прокидывать данные в хэндлеры, т.к. их нет в пропсах.
             Например, было бы сложно использовать connect через рендерпроп.
           </li>
-        </ul>
-      </section>
-      <section>
-        Пример:
-        <ul>
           <li>
-            Новый Context API
-            <br />
+            Render prop hell — куча компонентов, вложенных друг в друга. Пример
+            — собирать информацию сразу из нескольких контекстов.
             <pre>
-              {`<Consumer>
-  {value => /* render something based on the context value */}
-</Consumer>`}
-            </pre>
-          </li>
-          <li>
-            react-router
-            <br />
-            https://reacttraining.com/react-router/core/api/Route/render-func
-            <br />
-            https://reacttraining.com/react-router/core/api/Route/children-func
-          </li>
-          <li>
-            react-apollo
-            <br />
-            <pre>
-              {`<Query query={GET_DATA}>
-  {({ loading, error, data }) => {
-    if (loading) return 'Loading...';
-    if (error) return 'Error!';
-
-    return (
-      <div>{JSON.stringify(data)}</div>
-    );
-  }}
-</Query>`}
+              {`
+<ConsumerA>
+  {a => (
+    <ConsumerB>
+      {b => (
+        <ConsumerC>
+          {c => a + b + c}
+        </ConsumerC>
+      )}
+    </ConsumerB>
+  )}
+</ConsumerA>
+          `}
             </pre>
           </li>
         </ul>

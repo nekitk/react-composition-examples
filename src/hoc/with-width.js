@@ -1,5 +1,6 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
+import hoistStatics from "hoist-non-react-statics";
 
 export function withWidth(Component) {
   class WithWidth extends React.Component {
@@ -38,7 +39,11 @@ export function withWidth(Component) {
     };
   }
 
-  return React.forwardRef((props, ref) => {
+  const Enhanced = React.forwardRef((props, ref) => {
     return <WithWidth {...props} forwardedRef={ref} />;
   });
+
+  hoistStatics(Enhanced, Component);
+
+  return Enhanced;
 }

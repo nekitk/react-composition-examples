@@ -1,4 +1,5 @@
 import * as React from "react";
+import hoistStatics from "hoist-non-react-statics";
 
 export const withNow = (accuracy = 1000) => Component => {
   class WithNow extends React.Component {
@@ -33,7 +34,11 @@ export const withNow = (accuracy = 1000) => Component => {
     };
   }
 
-  return React.forwardRef((props, ref) => {
+  const Enhanced = React.forwardRef((props, ref) => {
     return <WithNow {...props} forwardedRef={ref} />;
   });
+
+  hoistStatics(Enhanced, Component);
+
+  return Enhanced;
 };

@@ -2,7 +2,7 @@ import * as React from "react";
 import { WithNow } from "./with-now";
 import { Summary } from "./summary";
 
-function FormattedNow({ now, minutes }) {
+function FormattedNow({ now }) {
   return <span style={{ fontWeight: "bold" }}>{now.toLocaleString()}</span>;
 }
 
