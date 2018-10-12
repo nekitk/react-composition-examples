@@ -38,6 +38,10 @@ export const withNow = (accuracy = 1000) => Component => {
     return <WithNow {...props} forwardedRef={ref} />;
   });
 
+  // Альтернативный вариант — сделать для рефа оборачиваемого компонента отдельный проп. Пример:
+  // https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/withRouter.md#wrappedcomponentref-func
+  // <MyComponent wrappedComponentRef={this.saveRef}/>
+
   hoistStatics(Enhanced, Component);
 
   return Enhanced;

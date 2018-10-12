@@ -17,6 +17,15 @@ const Time = compose(
   );
 });
 
+const Year = compose(
+  mapProps(props => ({
+    year: props.now.getFullYear()
+  })),
+  pure
+)(({ year }) => {
+  return <i>{year}</i>;
+});
+
 export default class MyComponent extends React.Component {
   render() {
     return (
@@ -24,22 +33,12 @@ export default class MyComponent extends React.Component {
         <h1>Component Injection</h1>
         Time: <WithNow component={Time} />
         <br />
-        Year: <WithNow component={this.Year} />
+        Year: <WithNow component={Year} />
         <br />
         Value: <WithNow component={({ now }) => now.valueOf()} />
       </div>
     );
   }
-
-  Year = compose(
-    mapProps(props => ({
-      year: props.now.getFullYear()
-    })),
-    pure
-  )(({ year }) => {
-    console.log("render year");
-    return <i>{year}</i>;
-  });
 
   // @public
   ping() {

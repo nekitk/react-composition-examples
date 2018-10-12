@@ -9,13 +9,21 @@
   },
   "dependencies": {
     "create-react-class": "15.6.3",
+    "epitath": "1.0.0-beta.1",
     "hoist-non-react-statics": "3.0.1",
     "ramda": "0.25.0",
     "react": "16.4.1",
     "react-dom": "16.4.1",
+    "react-powerplug": "1.0.0-rc.1",
     "recompose": "0.29.0"
   },
   "devDependencies": {
+    "@types/create-react-class": "15.6.2",
+    "@types/hoist-non-react-statics": "3.0.1",
+    "@types/ramda": "0.25.39",
+    "@types/react": "16.4.16",
+    "@types/react-dom": "16.0.9",
+    "@types/recompose": "0.27.0",
     "parcel-bundler": "^1.6.1"
   },
   "keywords": []

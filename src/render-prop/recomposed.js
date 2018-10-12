@@ -6,10 +6,12 @@ export default class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        Now: <WithNow render={now => <this.Now now={now} />} />
+        Now: <WithNow render={this.renderNow} />
       </div>
     );
   }
+
+  renderNow = now => <this.Now now={now} />;
 
   Now = compose(
     mapProps(props => ({

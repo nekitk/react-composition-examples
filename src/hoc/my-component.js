@@ -22,10 +22,6 @@ class MyComponent extends React.Component {
     return true;
   }
 
-  /*
-    import MyComponent from './my-component';
-    console.log(MyComponent.pingStatic) // -> undefined
-  */
   static pingStatic() {
     alert("Pinged staticly");
   }

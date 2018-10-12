@@ -4,7 +4,7 @@ import "./style.css";
 
 // import { MyComponent } from "./composition/01-container-and-presentational.js";
 // import { MyComponent } from "./composition/children-branching";
-import MyComponent from "./hoc/my-component";
+// import MyComponent from "./hoc/my-component";
 // import MyComponent from "./render-prop/my-component";
 // import MyComponent from "./render-prop/recomposed";
 // import MyComponent from "./render-prop/omni-render-prop";
@@ -15,6 +15,8 @@ import MyComponent from "./hoc/my-component";
 // import MyComponent from "./inheritance/basic-inheritance";
 // import MyComponent from "./inheritance/multiple-inheritance";
 // import MyComponent from "./mixin/my-component";
+// import MyComponent from "./render-prop/power-plug";
+import MyComponent from "./render-prop/epitath";
 
 // TODO табы с разными компонентами ?
 
@@ -28,9 +30,11 @@ class App extends React.Component {
           Ping MyComponent
         </button>
 
+        {/*
         <button type="button" onClick={this.handleStaticPing}>
           Staticly Ping MyComponent
         </button>
+        */}
 
         <br />
         <MyComponent ref={this.myRef} />
